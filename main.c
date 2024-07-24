@@ -6,6 +6,7 @@ int main(){
     Lista* l = NULL;
     Lista* l2 = NULL;
     Lista* invertida = NULL;
+    Lista* concatena = NULL;
 
     l = insere(l, 1);
     l = insere(l, 2);
@@ -32,8 +33,12 @@ int main(){
     printf("\nINSERIR NA CAUDA: ");
     imprimir(l2);
     printf("\nINVERTER LISTA: ");
-    invertida = inverte(l);
+    //invertida = inverte(l);
     imprimir(invertida);
+
+    printf("\nCONCATENAR LISTA: ");
+    concatena = concatenar(l, l2);
+    imprimir(concatena);
 
     return 0;
 }

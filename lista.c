@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include "lista.h"
 
+int vazia(Lista *l){
+    if(l == NULL)
+        return 1;
+    else
+        return 0;
+}
 
 Lista* insere(Lista* l, int x){
     Lista* aux = (Lista*)malloc(sizeof(Lista));
@@ -26,9 +32,10 @@ Lista* remover(Lista* l, int x){
 }
 
 void imprimir(Lista* l){
-    printf("%d ", l->info);
-    if(l->prox != NULL)
-        imprimir(l->prox);
+    if(!vazia(l)){
+        printf("%d ", l->info);
+        return imprimir(l->prox);
+    }
 }
 
 Lista* insere_cauda(Lista* l, int info){
@@ -52,4 +59,17 @@ Lista* inverte(Lista* l){
         atual = seg;
     }
     return ant;
+}
+
+Lista* concatenar(Lista* l1, Lista* l2){
+    Lista* aux = NULL;
+    while(!vazia(l1)){
+        aux = insere(aux, l1->info);
+        l1 = l1->prox;
+    }
+    while(!vazia(l2)){
+        aux = insere(aux, l2->info);
+        l2 = l2->prox;
+    }
+    return aux;
 }
