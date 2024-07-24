@@ -43,5 +43,13 @@ Lista* insere_cauda(Lista* l, int info){
 }
 
 Lista* inverte(Lista* l){
+    Lista * ant = NULL, *atual = l, *seg = NULL;
 
+    while(atual != NULL){
+        seg = atual->prox;
+        atual->prox = ant;
+        ant = atual;
+        atual = seg;
+    }
+    return ant;
 }

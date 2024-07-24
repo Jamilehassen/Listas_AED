@@ -16,6 +16,8 @@ Lista* insere_cauda(Lista* l, int info);
 
 Lista* remover(Lista* l, int x);
 
+Lista* inverte(Lista* l);
+
 void imprimir(Lista* l);
 
 #endif

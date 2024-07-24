@@ -5,6 +5,7 @@
 int main(){
     Lista* l = NULL;
     Lista* l2 = NULL;
+    Lista* invertida = NULL;
 
     l = insere(l, 1);
     l = insere(l, 2);
@@ -26,9 +27,13 @@ int main(){
     l2 = insere_cauda(l2, 13);
     l2 = insere_cauda(l2, 14);
 
+    printf("INSERIR NA CABECA: ");
     imprimir(l);
-    printf("\n");
+    printf("\nINSERIR NA CAUDA: ");
     imprimir(l2);
+    printf("\nINVERTER LISTA: ");
+    invertida = inverte(l);
+    imprimir(invertida);
 
     return 0;
 }
