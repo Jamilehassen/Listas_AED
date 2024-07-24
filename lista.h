@@ -10,21 +10,10 @@ typedef struct no{
     struct no *prox;
 } lista;
 
-int vazia(lista *l){
-    return (l == NULL);
-}
+int vazia(lista *l);
 
-lista* insere(lista* l, int x){
-    lista* aux = (lista*)malloc(sizeof(lista));
-    aux->info = x;
-    aux->prox = l;
-    return aux;
-}
+lista* insere(lista* l, int x);
 
-lista* remove(lista* l, int x){
-    
-}
-
-
+lista* remove(lista* l, int x);
 
 #endif
