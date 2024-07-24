@@ -5,15 +5,15 @@
 #include <string.h>
 #include <stdlib.h>
 
-typedef struct no{
-    int info;
-    struct no *prox;
-} lista;
+typedef struct no {
+ int info;
+ struct no *prox;
+ } Lista;
 
-int vazia(lista *l);
+Lista* insere(Lista* l, int x);
 
-lista* insere(lista* l, int x);
+Lista* remover(Lista* l, int x);
 
-lista* remove(lista* l, int x);
+void imprimir(Lista* l);
 
 #endif
