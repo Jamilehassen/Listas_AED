@@ -31,4 +31,17 @@ void imprimir(Lista* l){
         imprimir(l->prox);
 }
 
-// TESTE
+Lista* insere_cauda(Lista* l, int info){
+    if (l == NULL) {
+        Lista* aux = (Lista*)malloc(sizeof(Lista));
+        aux->info = info;
+        aux->prox = NULL;
+        return aux;
+    } else
+        l->prox = insere_cauda(l->prox, info);
+    return l;
+}
+
+Lista* inverte(Lista* l){
+
+}

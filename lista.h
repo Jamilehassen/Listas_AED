@@ -12,6 +12,8 @@ typedef struct no {
 
 Lista* insere(Lista* l, int x);
 
+Lista* insere_cauda(Lista* l, int info);
+
 Lista* remover(Lista* l, int x);
 
 void imprimir(Lista* l);
