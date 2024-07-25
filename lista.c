@@ -87,5 +87,21 @@ Lista* concatenar(Lista* l1, Lista* l2){
 
 // Intercala duas listas
 Lista* merge(Lista* l1, Lista* l2){
+    Lista *aux = NULL;
 
+    while(!vazia(l1) && !vazia(l2)){
+        aux = insere_cauda(aux, l1->info);
+        l1 = l1->prox;
+        aux = insere_cauda(aux, l2->info);
+        l2 = l2->prox;
+    }
+    while(!vazia(l1) && vazia(l2)){
+        aux = insere_cauda(aux, l1->info);
+        l1 = l1->prox;
+    }
+    while(vazia(l1) && !vazia(l2)){
+        aux = insere_cauda(aux, l2->info);
+        l2 = l2->prox;
+    }
+    return aux;
 }

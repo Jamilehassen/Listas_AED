@@ -7,6 +7,7 @@ int main(){
     Lista* l2 = NULL;
     Lista* invertida = NULL;
     Lista* concatena = NULL;
+    Lista* intercalar = NULL;
 
     l = insere(l, 1);
     l = insere(l, 2);
@@ -38,9 +39,13 @@ int main(){
     invertida = inverter_sem_modificacao(l);
     imprimir(invertida);
 
-    printf("\nCONCATENAR LISTA: ");
+    printf("\nCONCATENAR LISTAS: ");
     concatena = concatenar(l2, l);
     imprimir(concatena);
+
+    printf("\nINTERCALAR LISTAS: ");
+    intercalar = merge(l,l2);
+    imprimir(intercalar);
 
     return 0;
 }
