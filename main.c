@@ -31,13 +31,14 @@ int main(){
     l2 = insere_cauda(l2, 13);
     l2 = insere_cauda(l2, 14);
 
+    printf("\n-------------------------------------------\n");
     printf("INSERIR NA CABECA: ");
     imprimir(l);
     printf("\nINSERIR NA CAUDA: ");
     imprimir(l2);
     printf("\nINVERTER LISTA: ");
-    //invertida = inverte(l);
-    ///imprimir(invertida);
+    //invertida = inverte(l); ---> AQUI ELE NAO FUNCIONA A SOMA PQ MEXE DIRETAMENTE COM A LISTA, ELE MODIFICA A LISTA.
+    //mprimir(invertida);
     invertida = inverter_sem_modificacao(l);
     imprimir(invertida);
 
@@ -59,6 +60,8 @@ int main(){
     printf("\nCONCATENAR LISTAS RECURSIVO: ");
     concatena_rec = concatenar_rec(l2, l);
     imprimir(concatena_rec);
+
+    printf("\n-------------------------------------------\n");
 
     return 0;
 }

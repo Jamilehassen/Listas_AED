@@ -3,10 +3,7 @@
 #include "lista.h"
 
 int vazia(Lista *l){
-    if(l == NULL)
-        return 1;
-    else
-        return 0;
+    return (l == NULL);
 }
 
 Lista* insere(Lista* l, int x){
@@ -49,7 +46,7 @@ Lista* insere_cauda(Lista* l, int info){
     return l;
 }
 
-// Aqui não modifica a lista original
+// Aqui não modifica a lista original e de forma recursiva
 Lista* inverter_sem_modificacao(Lista* l){
     if(vazia(l)) return NULL;
     Lista* ivt = inverter_sem_modificacao(l->prox);
@@ -57,7 +54,7 @@ Lista* inverter_sem_modificacao(Lista* l){
     return aux;
 }
 
-// Aqui modifica a lista original
+// Aqui modifica a lista original e de forma iterativa
 Lista* inverte(Lista* l){
     Lista * ant = NULL, *atual = l, *seg = NULL;
 
