@@ -13,6 +13,40 @@ Lista* insere(Lista* l, int x){
     return aux;
 }
 
+Lista* insere_cauda(Lista* l, int info){
+    if (l == NULL) {
+        Lista* aux = (Lista*)malloc(sizeof(Lista));
+        aux->info = info;
+        aux->prox = NULL;
+        return aux;
+    } else
+        l->prox = insere_cauda(l->prox, info);
+    return l;
+}
+
+Lista* insere_ordenado(Lista* l, int info){
+    if(l == NULL){
+        Lista* aux = (Lista*)malloc(sizeof(Lista));
+        aux->info = info;
+        aux->prox = NULL;
+        return aux;
+    }
+    if(l->info > info){}
+    /*
+    if(l == NULL){
+        Lista* aux = (Lista*)malloc(sizeof(Lista));
+        aux->info = info;
+        aux->prox = NULL;
+        return aux;
+    }
+    else{
+        if(l->info > info)  l->prox = insere_ordenado(l->prox, info);
+        else l->prox = insere(l->prox, info);
+    }
+    return l;
+    */
+}
+
 Lista* remover(Lista* l, int x){
     Lista* ant = l, *atual = l;
 
@@ -28,22 +62,21 @@ Lista* remover(Lista* l, int x){
     return l;
 }
 
+Lista* remover_rec(Lista* l, int info){
+    if(vazia(l))    return NULL;
+    if(l->info == info){
+        Lista* aux = l;
+        l = l->prox;
+        free(aux);
+        return l;
+    } else l->prox = remover_rec(l->prox, info);
+}
+
 void imprimir(Lista* l){
     if(!vazia(l)){
         printf("%d ", l->info);
         return imprimir(l->prox);
     }
-}
-
-Lista* insere_cauda(Lista* l, int info){
-    if (l == NULL) {
-        Lista* aux = (Lista*)malloc(sizeof(Lista));
-        aux->info = info;
-        aux->prox = NULL;
-        return aux;
-    } else
-        l->prox = insere_cauda(l->prox, info);
-    return l;
 }
 
 // Aqui não modifica a lista original e de forma recursiva

@@ -5,6 +5,7 @@
 int main(){
     Lista* l = NULL;
     Lista* l2 = NULL;
+    Lista* l3 = NULL;
     Lista* invertida = NULL;
     Lista* concatena = NULL;
     Lista* intercalar = NULL;
@@ -31,11 +32,22 @@ int main(){
     l2 = insere_cauda(l2, 13);
     l2 = insere_cauda(l2, 14);
 
+    l2 = remover_rec(l2, 10);
+
+    l3 = insere_ordenado(l3, 210);
+    l3 = insere_ordenado(l3, 30);
+    l3 = insere_ordenado(l3, 40);
+    l3 = insere_ordenado(l3, 580);
+    l3 = insere_ordenado(l3, 60);
+    l3 = insere_ordenado(l3, 70);
+
     printf("\n-------------------------------------------\n");
     printf("INSERIR NA CABECA: ");
     imprimir(l);
     printf("\nINSERIR NA CAUDA: ");
     imprimir(l2);
+    printf("\nINSERIR ORDENADO: ");
+    imprimir(l3);
     printf("\nINVERTER LISTA: ");
     //invertida = inverte(l); ---> AQUI ELE NAO FUNCIONA A SOMA PQ MEXE DIRETAMENTE COM A LISTA, ELE MODIFICA A LISTA.
     //mprimir(invertida);

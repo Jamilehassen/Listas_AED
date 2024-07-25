@@ -14,7 +14,11 @@ Lista* insere(Lista* l, int x);
 
 Lista* insere_cauda(Lista* l, int info);
 
+Lista* insere_ordenado(Lista* l, int info);
+
 Lista* remover(Lista* l, int x);
+
+Lista* remover_rec(Lista* l, int info);
 
 Lista* inverte(Lista* l);
 
