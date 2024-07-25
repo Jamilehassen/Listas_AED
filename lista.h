@@ -22,6 +22,8 @@ Lista* inverter_sem_modificacao(Lista* l);
 
 Lista* concatenar(Lista* l1, Lista* l2);
 
+Lista* concatenar_rec(Lista* l1, Lista* l2);
+
 Lista* merge(Lista* l1, Lista* l2);
 
 Lista* intercala(Lista* l1, Lista* l2);

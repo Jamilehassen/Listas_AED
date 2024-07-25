@@ -70,7 +70,7 @@ Lista* inverte(Lista* l){
     return ant;
 }
 
-// Concatena duas listas
+// Concatena duas listas forma iterativa 
 Lista* concatenar(Lista* l1, Lista* l2){
     Lista* aux = NULL;
     while(!vazia(l1)){
@@ -81,6 +81,21 @@ Lista* concatenar(Lista* l1, Lista* l2){
         aux = insere_cauda(aux, l2->info);
         l2 = l2->prox;
     }
+    return aux;
+}
+
+// Concatena duas listas de forma recursiva
+Lista* concatenar_rec(Lista* l1, Lista* l2){
+    if(vazia(l1)) return l2;
+    if(vazia(l2)) return l1;
+  
+    if(!vazia(l1)) {
+        Lista* c = concatenar_rec(l1->prox, l2);
+        Lista* aux = insere(c, l1->info);
+    }
+    Lista* c = concatenar_rec(l1, l2->prox);
+    Lista* aux = insere(c, l2->info);
+
     return aux;
 }
 

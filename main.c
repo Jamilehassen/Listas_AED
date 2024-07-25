@@ -9,6 +9,7 @@ int main(){
     Lista* concatena = NULL;
     Lista* intercalar = NULL;
     Lista* inter = NULL;
+    Lista* concatena_rec = NULL;
 
     l = insere(l, 1);
     l = insere(l, 2);
@@ -55,6 +56,9 @@ int main(){
     inter = intercala(l,l2);
     imprimir(inter);
     
+    printf("\nCONCATENAR LISTAS RECURSIVO: ");
+    concatena_rec = concatenar_rec(l2, l);
+    imprimir(concatena_rec);
 
     return 0;
 }
