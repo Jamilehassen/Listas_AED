@@ -52,11 +52,9 @@ Lista* insere_cauda(Lista* l, int info){
 // Aqui não modifica a lista original
 Lista* inverter_sem_modificacao(Lista* l){
     if(vazia(l)) return NULL;
-    else{
-        Lista* ivt = inverter_sem_modificacao(l->prox);
-        Lista* aux = insere_cauda(ivt, l->info);
-        return aux;
-    }
+    Lista* ivt = inverter_sem_modificacao(l->prox);
+    Lista* aux = insere_cauda(ivt, l->info);
+    return aux;
 }
 
 // Aqui modifica a lista original
@@ -72,6 +70,7 @@ Lista* inverte(Lista* l){
     return ant;
 }
 
+// Concatena duas listas
 Lista* concatenar(Lista* l1, Lista* l2){
     Lista* aux = NULL;
     while(!vazia(l1)){
@@ -85,7 +84,7 @@ Lista* concatenar(Lista* l1, Lista* l2){
     return aux;
 }
 
-// Intercala duas listas
+// Intercala duas listas forma iterativa sem alterar a lsita original
 Lista* merge(Lista* l1, Lista* l2){
     Lista *aux = NULL;
 
@@ -104,4 +103,23 @@ Lista* merge(Lista* l1, Lista* l2){
         l2 = l2->prox;
     }
     return aux;
+}
+
+// Intercala duas listas forma recursivo sem alterar a lsita original
+Lista* intercala(Lista* l1, Lista* l2){
+    if(vazia(l1)) return l2;
+    if(vazia(l2)) return l1;
+    Lista* inter = insere(inter, l1->info);
+    inter->prox = insere(inter->prox, l2->info);
+    inter->prox->prox = intercala(l1->prox, l2->prox);
+
+    return inter;
+}
+
+// Soma os valores de um intervalo fechado entre a e b contando eles mesmos
+int soma_intervalo(Lista* l, int a, int b){
+    if(vazia(l))    return 0;
+    if(l->info >= a && l->info <= b){
+        return l->info + soma_intervalo(l->prox, a, b);
+    }else return soma_intervalo(l->prox, a, b);
 }

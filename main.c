@@ -8,6 +8,7 @@ int main(){
     Lista* invertida = NULL;
     Lista* concatena = NULL;
     Lista* intercalar = NULL;
+    Lista* inter = NULL;
 
     l = insere(l, 1);
     l = insere(l, 2);
@@ -46,6 +47,14 @@ int main(){
     printf("\nINTERCALAR LISTAS: ");
     intercalar = merge(l,l2);
     imprimir(intercalar);
+
+    printf("\nSOMA INTERVALO: ");
+    printf("%d", soma_intervalo(l,3,6));
+
+    printf("\nINTERCALAR LISTAS RECURSIVO: ");
+    inter = intercala(l,l2);
+    imprimir(inter);
+    
 
     return 0;
 }

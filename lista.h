@@ -24,6 +24,10 @@ Lista* concatenar(Lista* l1, Lista* l2);
 
 Lista* merge(Lista* l1, Lista* l2);
 
+Lista* intercala(Lista* l1, Lista* l2);
+
+int soma_intervalo(Lista* l, int a, int b);
+
 void imprimir(Lista* l);
 
 #endif
