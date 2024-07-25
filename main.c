@@ -34,10 +34,12 @@ int main(){
     imprimir(l2);
     printf("\nINVERTER LISTA: ");
     //invertida = inverte(l);
+    ///imprimir(invertida);
+    invertida = inverter_sem_modificacao(l);
     imprimir(invertida);
 
     printf("\nCONCATENAR LISTA: ");
-    concatena = concatenar(l, l2);
+    concatena = concatenar(l2, l);
     imprimir(concatena);
 
     return 0;

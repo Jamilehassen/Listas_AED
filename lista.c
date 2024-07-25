@@ -49,6 +49,17 @@ Lista* insere_cauda(Lista* l, int info){
     return l;
 }
 
+// Aqui não modifica a lista original
+Lista* inverter_sem_modificacao(Lista* l){
+    if(vazia(l)) return NULL;
+    else{
+        Lista* ivt = inverter_sem_modificacao(l->prox);
+        Lista* aux = insere_cauda(ivt, l->info);
+        return aux;
+    }
+}
+
+// Aqui modifica a lista original
 Lista* inverte(Lista* l){
     Lista * ant = NULL, *atual = l, *seg = NULL;
 
@@ -64,12 +75,17 @@ Lista* inverte(Lista* l){
 Lista* concatenar(Lista* l1, Lista* l2){
     Lista* aux = NULL;
     while(!vazia(l1)){
-        aux = insere(aux, l1->info);
+        aux = insere_cauda(aux, l1->info);
         l1 = l1->prox;
     }
     while(!vazia(l2)){
-        aux = insere(aux, l2->info);
+        aux = insere_cauda(aux, l2->info);
         l2 = l2->prox;
     }
     return aux;
+}
+
+// Intercala duas listas
+Lista* merge(Lista* l1, Lista* l2){
+
 }

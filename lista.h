@@ -18,7 +18,11 @@ Lista* remover(Lista* l, int x);
 
 Lista* inverte(Lista* l);
 
+Lista* inverter_sem_modificacao(Lista* l);
+
 Lista* concatenar(Lista* l1, Lista* l2);
+
+Lista* merge(Lista* l1, Lista* l2);
 
 void imprimir(Lista* l);
 
