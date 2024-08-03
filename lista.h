@@ -20,6 +20,8 @@ Lista* remover(Lista* l, int x);
 
 Lista* remover_rec(Lista* l, int info);
 
+Lista* elimina_repetidos(Lista* l);
+
 Lista* inverte(Lista* l);
 
 Lista* inverter_sem_modificacao(Lista* l);
@@ -35,5 +37,9 @@ Lista* intercala(Lista* l1, Lista* l2);
 int soma_intervalo(Lista* l, int a, int b);
 
 void imprimir(Lista* l);
+
+Lista* append(Lista* l1, Lista* l2);
+
+int cont_ocorrencias(Lista* l, int x);
 
 #endif

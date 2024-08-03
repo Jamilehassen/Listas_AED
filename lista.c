@@ -31,20 +31,17 @@ Lista* insere_ordenado(Lista* l, int info){
         aux->prox = NULL;
         return aux;
     }
-    if(l->info > info){}
-    /*
-    if(l == NULL){
+    if(info < l->info){
         Lista* aux = (Lista*)malloc(sizeof(Lista));
         aux->info = info;
-        aux->prox = NULL;
+        aux->prox = l;
         return aux;
-    }
-    else{
-        if(l->info > info)  l->prox = insere_ordenado(l->prox, info);
-        else l->prox = insere(l->prox, info);
-    }
-    return l;
-    */
+    }else l->prox = insere_ordenado(l->prox, info);
+}
+
+// 
+Lista* append(Lista* l1, Lista* l2){
+
 }
 
 Lista* remover(Lista* l, int x){
@@ -66,11 +63,27 @@ Lista* remover_rec(Lista* l, int info){
     if(vazia(l))    return NULL;
     if(l->info == info){
         Lista* aux = l;
-        l = l->prox;
-        free(aux);
-        return l;
+        aux = aux->prox;
+        free(l);
+        return aux;
     } else l->prox = remover_rec(l->prox, info);
 }
+
+ Lista* elimina_repetidos(Lista* l){
+    Lista* ant = l;
+    while(ant != NULL){
+        Lista* atual = ant;
+        while(atual->prox != NULL){
+            if(atual->prox->info == ant->info){
+                Lista* aux = atual->prox;
+                atual->prox = atual->prox->prox;
+                free(aux);
+            }else atual = atual->prox;
+        }
+        ant = ant->prox;
+    }
+    return l;
+ }
 
 void imprimir(Lista* l){
     if(!vazia(l)){
@@ -114,8 +127,11 @@ Lista* concatenar(Lista* l1, Lista* l2){
     return aux;
 }
 
+// fazer uma função que clona a lista original para outra
+
 // Concatena duas listas de forma recursiva
 Lista* concatenar_rec(Lista* l1, Lista* l2){
+
     if(vazia(l1)) return l2;
     if(vazia(l2)) return l1;
   
@@ -167,4 +183,10 @@ int soma_intervalo(Lista* l, int a, int b){
     if(l->info >= a && l->info <= b){
         return l->info + soma_intervalo(l->prox, a, b);
     }else return soma_intervalo(l->prox, a, b);
+}
+
+int cont_ocorrencias(Lista* l, int x){
+    if(l == NULL)   return 0;
+    if(x == l->info)    return 1 + cont_ocorrencias(l->prox, x);
+    else return cont_ocorrencias(l->prox, x);
 }

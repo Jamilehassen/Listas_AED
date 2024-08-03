@@ -11,6 +11,7 @@ int main(){
     Lista* intercalar = NULL;
     Lista* inter = NULL;
     Lista* concatena_rec = NULL;
+    Lista* eli_rep = NULL;
 
     l = insere(l, 1);
     l = insere(l, 2);
@@ -36,8 +37,11 @@ int main(){
 
     l3 = insere_ordenado(l3, 210);
     l3 = insere_ordenado(l3, 30);
+    l3 = insere_ordenado(l3, 70);
+    l3 = insere_ordenado(l3, 70);
     l3 = insere_ordenado(l3, 40);
     l3 = insere_ordenado(l3, 580);
+    l3 = insere_ordenado(l3, 70);
     l3 = insere_ordenado(l3, 60);
     l3 = insere_ordenado(l3, 70);
 
@@ -72,6 +76,12 @@ int main(){
     printf("\nCONCATENAR LISTAS RECURSIVO: ");
     concatena_rec = concatenar_rec(l2, l);
     imprimir(concatena_rec);
+
+    printf("\nCONTA OCORRENCIAS: %d", cont_ocorrencias(l3, 70));
+
+    printf("\nELIMINAR REPETIDOS: ");
+    eli_rep = elimina_repetidos(l3);
+    imprimir(eli_rep);
 
     printf("\n-------------------------------------------\n");
 
