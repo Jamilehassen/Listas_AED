@@ -41,6 +41,9 @@ int main(){
     l3 = insere_ordenado(l3, 70);
     l3 = insere_ordenado(l3, 40);
     l3 = insere_ordenado(l3, 580);
+    l3 = insere_ordenado(l3, 580);
+    l3 = insere_ordenado(l3, 580);
+    l3 = insere_ordenado(l3, 580);
     l3 = insere_ordenado(l3, 70);
     l3 = insere_ordenado(l3, 60);
     l3 = insere_ordenado(l3, 70);
