@@ -190,3 +190,9 @@ int cont_ocorrencias(Lista* l, int x){
     if(x == l->info)    return 1 + cont_ocorrencias(l->prox, x);
     else return cont_ocorrencias(l->prox, x);
 }
+
+int busca(Lista* l, int x){
+    if(l == NULL)   return 0;
+    if(x == l->info)    return 1;
+    else busca(l->prox, x);
+}

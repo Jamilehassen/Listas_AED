@@ -34,12 +34,14 @@ Lista* merge(Lista* l1, Lista* l2);
 
 Lista* intercala(Lista* l1, Lista* l2);
 
-int soma_intervalo(Lista* l, int a, int b);
+Lista* append(Lista* l1, Lista* l2);
 
 void imprimir(Lista* l);
 
-Lista* append(Lista* l1, Lista* l2);
+int soma_intervalo(Lista* l, int a, int b);
 
 int cont_ocorrencias(Lista* l, int x);
+
+int busca(Lista* l, int x);
 
 #endif

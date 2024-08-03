@@ -83,6 +83,8 @@ int main(){
     eli_rep = elimina_repetidos(l3);
     imprimir(eli_rep);
 
+    printf("\nBUSCA: %d", busca(l3, 210));
+
     printf("\n-------------------------------------------\n");
 
     return 0;
