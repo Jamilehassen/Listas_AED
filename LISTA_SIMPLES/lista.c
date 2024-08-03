@@ -130,6 +130,7 @@ Lista* concatenar(Lista* l1, Lista* l2){
 // fazer uma função que clona a lista original para outra
 
 // Concatena duas listas de forma recursiva
+// ESSA BASICAMENTE É A APPEND PQ EU CONCATENO COM A LISTA ORIGINAL
 Lista* concatenar_rec(Lista* l1, Lista* l2){
 
     if(vazia(l1)) return l2;
