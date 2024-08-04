@@ -37,7 +37,7 @@ void imprimir(struct fila* f){
  void dequeue(struct fila* f){
     if(!vazia(f)){
         struct no* aux = f->prim;
-        if(f->prim == f->ultimo)    f->ultimo = NULL; // SÓ TEM UM ELEMENTO
+        if(f->prim == f->ultimo)    f->ultimo = NULL; // SÓ TEM UM ELEMENTO TESTEEEEEEEEEEE
         f->prim = f->prim->prox;
         free(aux);
         f->n--;
