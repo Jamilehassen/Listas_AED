@@ -25,7 +25,7 @@ void enqueue(struct fila* f, int info){
 }
 
 void imprimir(struct fila* f){
-    if (vazia(f)) printf("A fila está vazia.\n");
+    if (vazia(f)) printf("A fila está vazia.\n"); 
     struct no* aux = f->prim;
     while(aux != NULL){
         printf("%d ", aux->info);
