@@ -30,6 +30,11 @@ Pilha* pop(Pilha* p){
     }
 }
 
+int topo(Pilha* p){
+    if(vazia(p)) return -1;
+    else return p->topo->info;
+}
+
 void imprime(Pilha* p){
     if(!vazia(p)){
         struct no* aux = p->topo;
