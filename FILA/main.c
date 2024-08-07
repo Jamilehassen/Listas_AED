@@ -14,10 +14,10 @@ int main(){
     enqueue(f, 88);
 
     imprimir(f);
-    printf("\n");
 
     dequeue(f);
     dequeue(f);
 
     imprimir(f);
+    inverte(f);
 }

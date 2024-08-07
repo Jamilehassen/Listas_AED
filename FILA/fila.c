@@ -31,7 +31,7 @@ void imprimir(struct fila* f){
         printf("%d ", aux->info);
         aux = aux->prox;
     }
-    printf("\nELEMENTOS: %d", f->n);
+    printf("\n");
 }
 
  void dequeue(struct fila* f){
@@ -45,5 +45,25 @@ void imprimir(struct fila* f){
  }
 
  void inverte(struct fila * f){
-    
+    if(!vazia(f)){
+        struct no* s = NULL;
+        struct fila* f2 = cria_fila_vazia();
+        
+        while(!vazia(f)){
+            struct no* aux = (struct no*)malloc(sizeof(struct no));
+            aux->info = f->prim->info;
+            aux->prox = s;
+            s = aux;
+            dequeue(f);
+        }
+
+        while(s != NULL){
+            struct no* f2 = s;
+            enqueue(f, s->info);
+            s = s->prox;
+            free(f2);
+        }
+        free(f2);
+        imprimir(f);
+    }
  }
