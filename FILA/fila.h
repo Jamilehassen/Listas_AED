@@ -28,5 +28,7 @@ void enqueue(struct fila* f, int info);
 
 void imprimir(struct fila* f);
 
+void inverte(struct fila * f);
+
 
 #endif
